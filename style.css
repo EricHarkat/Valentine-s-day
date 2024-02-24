@@ -1,0 +1,147 @@
+*{
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: rgb(7,7,20);
+}
+
+:root{
+  --main-color:#DC143c;
+}
+
+/* gray-heart */
+
+.gray-heart{
+  background : #CCC;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  position: relative;
+  top:0;
+  transform:rotate(-45deg)
+}
+
+.gray-heart:before,
+.gray-heart:after{
+  content:"";
+  background : #CCC;
+  border-radius:50%;
+  height: 100px;
+  width: 100px;
+  position:absolute;
+}
+
+.gray-heart:before{
+  top:-50px;
+  left:0;
+}
+
+.gray-heart:after{
+  top:0px;
+  left:50px
+}
+
+
+/* red-heart */
+
+.red-heart{
+  background-color: var(--main-color);
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  transform:rotate(-45deg);
+  visibility: hidden;
+}
+
+.red-heart:before,
+.red-heart:after{
+  content:"";
+  background : var(--main-color);
+  border-radius:50%;
+  height: 100px;
+  width: 100px;
+  position:absolute;
+}
+
+.red-heart:before{
+  top:-50px;
+  left:0;
+}
+
+.red-heart:after{
+  top:0px;
+  left:50px
+}
+
+.red-heart.animation{
+  animation: pop 0.9s linear;
+  visibility: visible;
+}
+
+.red-heart.fill-color{
+  background : var(--main-color);
+}
+
+@keyframes pop {
+  100% {
+    transform: scale(1.7) rotate(-45deg);
+    opacity:0;
+  }
+}
+
+/* text into the heart */
+
+.text{
+  position:absolute;
+  top: 46%;
+  font-size: larger;
+  cursor: pointer;
+  visibility: visible;
+}
+
+.text-2nd{
+  position:absolute;
+  top: 46%;
+  font-size: larger;
+  cursor: pointer;
+  visibility: hidden;
+}
+
+
+/* text under the heart */
+
+.text-3th{
+  position:absolute;
+  top: 66%;
+  font-size: 31px;
+  color: #fff;
+  visibility: hidden;
+}
+
+.text-3th.animation{
+  animation: pop2 0.9s linear;
+}
+
+.text-3th.fill-color{
+  background : var(--main-color);
+}
+
+@keyframes pop2 {
+  100% {
+    transform: scale(1.7);
+    opacity:0;
+  }
+}
